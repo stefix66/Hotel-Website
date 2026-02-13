@@ -3,84 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <title>Огляд готелів</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    
+    <style>
+        a { color: #ffffff; }
+        .nav a { background: rgba(15,23,42,0.55); border-color: rgba(255,255,255,0.25); }
+    </style>
 </head>
 
-<body bgcolor="blue" link="#ffffff" vlink="#cccccc" alink="#ff0000" text="white">
+<body style="background-color:#3877f5; color:#ffffff;">
 
-<h1>Популярні готелі</h1>
+<h1 class="page-title">Популярні готелі</h1>
 
-<p>
+<p class="nav">
     <a href="index.html">Головна</a> |
     <a href="hotels.html">Готелі</a> |
     <a href="rooms.html">Номери</a> |
     <a href="contacts.html">Контакти</a>
 </p>
 
-<p><b>Luxury Resort</b> — готель преміум класу біля моря.</p>
-<p><i>City Hotel</i> — зручний варіант для бізнес-подорожей.</p>
+<p class="note"><b>Luxury Resort</b> — готель преміум класу біля моря.</p>
+<p class="note"><i>City Hotel</i> — зручний варіант для бізнес-подорожей.</p>
 
 <h2>Послуги</h2>
-<ol type="I">
+<ol>
     <li>SPA</li>
     <li>Басейн</li>
     <li>Трансфер</li>
 </ol>
 
 <h2>Фото</h2>
-
-<img src="images/hotel.png" width="200" height="120" alt="Малий готель">
+<img class="media" src="images/hotel.png" width="200" height="120" alt="Малий готель">
 
 <h2 id="hotels-table">Інформаційна таблиця готелів</h2>
 
-<table border="1" width="80%" align="center" cellpadding="10" cellspacing="5">
-    
-    <caption><b>Огляд популярних готелів</b></caption>
+<table class="table">
+    <caption>Огляд популярних готелів</caption>
 
-    
-    <tr bgcolor="darkblue">
-        <th>Готель 1</th>
-        <th>Готель 2</th>
-        <th>Готель 3</th>
-    </tr>
+    <thead>
+        <tr>
+            <th>Готель 1</th>
+            <th>Готель 2</th>
+            <th>Готель 3</th>
+        </tr>
+    </thead>
 
-   
-    <tr align="center">
-        <td><img src="images/hotel.png" width="100" height="70"></td>
-        <td><img src="images/business-hotel.png" width="100" height="70"></td>
-        <td><img src="images/city-hotel.png" width="100" height="70"></td>
-    </tr>
+    <tbody>
+        <tr class="center">
+            <td><img class="media" src="images/hotel.png" width="100" height="70" alt="Hotel 1"></td>
+            <td><img class="media" src="images/business-hotel.png" width="100" height="70" alt="Hotel 2"></td>
+            <td><img class="media" src="images/city-hotel.png" width="100" height="70" alt="Hotel 3"></td>
+        </tr>
 
-    
-    <tr align="center">
-        <td><a href="https://www.booking.com" target="_blank">Переглянути</a></td>
-        <td><a href="https://www.booking.com" target="_blank">Переглянути</a></td>
-        <td><a href="https://www.booking.com" target="_blank">Переглянути</a></td>
-    </tr>
+        <tr class="center">
+            <td><a href="https://www.booking.com" target="_blank">Переглянути</a></td>
+            <td><a href="https://www.booking.com" target="_blank">Переглянути</a></td>
+            <td><a href="https://www.booking.com" target="_blank">Переглянути</a></td>
+        </tr>
 
-    
-    <tr align="center">
-        <td>5★ Курортний готель</td>
-        <td>4★ Бізнес-готель</td>
-        <td>3★ Міський готель</td>
-    </tr>
-
+        <tr class="center">
+            <td>5★ Курортний готель</td>
+            <td>4★ Бізнес-готель</td>
+            <td>3★ Міський готель</td>
+        </tr>
+    </tbody>
 </table>
 
-
 <h2>Відеоогляд курортного готелю</h2>
+<p class="lead" style="color: rgba(255,255,255,0.8);">
+    Нижче представлено відеоогляд сучасного курортного готелю:
+</p>
 
-<p>Нижче представлено відеоогляд сучасного курортного готелю:</p>
-
-<iframe 
-width="560"
-        height="315"
-        src="https://www.youtube.com/embed/Z93HxTJYN0w"
-        title="Hotel Review"
-        frameborder="0"
-        allowfullscreen>
-        
+<iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/Z93HxTJYN0w"
+    title="Hotel Review"
+    frameborder="0"
+    allowfullscreen>
 </iframe>
-
 
 </body>
 </html>

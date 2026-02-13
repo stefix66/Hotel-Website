@@ -1,0 +1,202 @@
+/* =========================
+   Base
+========================= */
+:root{
+    --bg: #fff7cc;
+    --text: #1f2937;
+    --accent: #0ea5e9;
+    --accent2: #a855f7;
+    --muted: #6b7280;
+    --border: #111827;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 24px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--text);
+    background-color: var(--bg); /* вимога: фон body */
+}
+
+/* =========================
+   Headings (HN)
+========================= */
+.page-title{
+    text-align: center;
+    font-size: 40px;
+    font-style: italic;
+    color: #0f172a;
+    letter-spacing: 0.5px;
+    margin: 0 0 14px 0;
+}
+
+h2{
+    font-size: 26px;
+    color: #0f172a;
+    margin-top: 22px;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   Navigation
+========================= */
+.nav{
+    text-align: center;
+    margin: 10px 0 18px 0;
+}
+
+.nav a{
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 4px;
+    border: 2px solid rgba(15,23,42,0.15);
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    color: #0f172a;
+    background: rgba(255,255,255,0.6);
+}
+
+/* Стилі посилань (глобально) */
+a:link{ color: var(--accent); }
+a:visited{ color: var(--accent2); }
+a:hover{ text-decoration: underline; }
+a:active{ color: #ef4444; }
+
+/* =========================
+   Unique id (унікальний)
+   !important - примусово
+========================= */
+#special-offer{
+    color: #b91c1c !important;     /* вимога: !important */
+    font-weight: 800;
+    background: rgba(255,255,255,0.65);
+    padding: 10px 12px;
+    border-left: 6px solid #b91c1c;
+    border-radius: 10px;
+}
+
+/* =========================
+   Content helpers
+========================= */
+.lead{
+    color: var(--muted);
+    text-align: justify;
+}
+
+.note{
+    background: rgba(14,165,233,0.12);
+    border: 1px dashed rgba(14,165,233,0.5);
+    padding: 10px 12px;
+    border-radius: 10px;
+}
+
+/* =========================
+   Images
+========================= */
+.media{
+    display: block;
+    margin: 12px auto;
+    border-radius: 14px;
+    border: 3px solid rgba(17,24,39,0.12);
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================
+   Lists (ul/ol/dl)
+========================= */
+ul, ol{
+    margin: 10px 0 14px 26px;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(17,24,39,0.12);
+    border-radius: 12px;
+}
+
+ul li, ol li{
+    padding: 4px 0;
+}
+
+ol{
+    list-style-type: upper-roman;
+}
+
+ul{
+    list-style-type: circle;
+}
+
+/* Список визначень */
+dl{
+    margin: 10px 0 14px 0;
+    padding: 12px 14px;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(17,24,39,0.12);
+    border-radius: 12px;
+}
+dt{
+    font-weight: 800;
+    color: #0f172a;
+    margin-top: 10px;
+}
+dd{
+    margin-left: 18px;
+    color: var(--muted);
+}
+
+/* =========================
+   Tables
+========================= */
+.table{
+    width: 90%;
+    margin: 12px auto 18px auto;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.7);
+    border: 2px solid rgba(17,24,39,0.18);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.table caption{
+    caption-side: top;
+    padding: 10px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.table th,
+.table td{
+    border: 1px solid rgba(17,24,39,0.18);
+    padding: 10px 12px;
+}
+
+.table thead th{
+    background: rgba(15,23,42,0.9);
+    color: #ffffff;
+    text-align: center;
+}
+
+.table tbody tr:nth-child(even){
+    background: rgba(14,165,233,0.08);
+}
+
+.table .right{
+    text-align: right;
+}
+.table .center{
+    text-align: center;
+}
+
+/* =========================
+   Footer link block
+========================= */
+.link-block{
+    text-align: center;
+    margin-top: 10px;
+}

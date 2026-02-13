@@ -4,95 +4,100 @@
     <meta charset="UTF-8">
     <meta name="author" content="Бондаренко Ілля Миколайович">
     <title>Готелі світу — Головна</title>
+
+  
+    <link rel="stylesheet" href="styles.css">
+
+    
+    <style>
+        a { color: #0f172a; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
 </head>
 
-<body bgcolor="yellow" link="#ffffff" vlink="#cccccc" alink="#ff0000">
+<body>
 
-<h1><b>Ласкаво просимо до світу готелів</b></h1>
+<h1 class="page-title"><b>Ласкаво просимо до світу готелів</b></h1>
 
-<p>
+<p class="nav">
     <a href="index.html">Головна</a> |
     <a href="hotels.html">Готелі</a> |
     <a href="rooms.html">Номери</a> |
     <a href="contacts.html">Контакти</a>
 </p>
 
-<p><i>Інформаційний сайт про готелі</i> допоможе вам знайти ідеальне місце для відпочинку.</p>
-<p>Ми розглядаємо <b>курортні</b>, <b>міські</b> та <b>бізнес-готелі</b>.</p>
+
+<p style="text-align:center; font-style: italic;">
+    <i>Інформаційний сайт про готелі</i> допоможе вам знайти ідеальне місце для відпочинку.
+</p>
+
+<p class="lead">
+    Ми розглядаємо <b>курортні</b>, <b>міські</b> та <b>бізнес-готелі</b>.
+</p>
+
+
+<p id="special-offer">
+    Гаряча пропозиція: обирай напрямок — і гайда відпочивати!
+</p>
 
 <h2>Популярні напрямки</h2>
-<ul type="circle">
+<ul>
     <li>Туреччина</li>
     <li>Італія</li>
     <li>Іспанія</li>
     <li>Єгипет</li>
 </ul>
 
-<a href="hotels.html#hotels-table">Перейти до таблиці готелів</a>
+<p class="link-block">
+    <a href="hotels.html#hotels-table">Перейти до таблиці готелів</a>
+</p>
 
-<p><a href="https://www.booking.com" target="_blank">Переглянути</a> </p>
-
+<p class="link-block">
+    <a href="https://www.booking.com" target="_blank">Переглянути на Booking</a>
+</p>
 
 <h2>Фото місця відпочинку</h2>
 
 <a href="images/egypt.png" target="_blank">
-    <img src="images/egypt.png" width="300" height="180" alt="Єгипет">
+    <img class="media" src="images/egypt.png" width="300" height="180" alt="Єгипет">
 </a>
 
 <h2>Складна таблиця напрямків та цін</h2>
 
-<table border="1"
-       width="90%"
-       align="center"
-       cellpadding="10"
-       cellspacing="8">
+<table class="table">
+    <caption>Туристичні напрямки та середня вартість проживання</caption>
 
-    <caption><b>Туристичні напрямки та середня вартість проживання</b></caption>
+    <thead>
+        <tr>
+            <th colspan="4">Популярні країни для відпочинку</th>
+        </tr>
+        <tr>
+            <th>Країна</th>
+            <th>Тип готелю</th>
+            <th>Середня ціна</th>
+            <th>Рейтинг</th>
+        </tr>
+    </thead>
 
-    
-    <colgroup>
-        <col bgcolor="#fffacd">
-        <col bgcolor="#ffe4b5">
-        <col bgcolor="#e6e6fa">
-        <col bgcolor="#d8bfd8">
-    </colgroup>
-
-    
-    <tr align="center" bgcolor="orange">
-        <th colspan="4">Популярні країни для відпочинку</th>
-    </tr>
-
-    
-    <tr align="center" bgcolor="#ffcc66">
-        <th>Країна</th>
-        <th>Тип готелю</th>
-        <th>Середня ціна</th>
-        <th>Рейтинг</th>
-    </tr>
-
-   
-    <tr align="left">
-        <td rowspan="2">Туреччина</td>
-        <td>5★ Resort</td>
-        <td align="right">150$</td>
-        <td align="center">9.1</td>
-    </tr>
-
-    <tr align="left">
-        <td>4★ Hotel</td>
-        <td align="right">90$</td>
-        <td align="center">8.5</td>
-    </tr>
-
-   
-    <tr align="left">
-        <td>Єгипет</td>
-        <td colspan="2" align="center">All Inclusive від 120$</td>
-        <td align="center">8.9</td>
-    </tr>
-
+    <tbody>
+        <tr>
+            <td rowspan="2">Туреччина</td>
+            <td>5★ Resort</td>
+            <td class="right">150$</td>
+            <td class="center">9.1</td>
+        </tr>
+        <tr>
+            <td>4★ Hotel</td>
+            <td class="right">90$</td>
+            <td class="center">8.5</td>
+        </tr>
+        <tr>
+            <td>Єгипет</td>
+            <td colspan="2" class="center">All Inclusive від 120$</td>
+            <td class="center">8.9</td>
+        </tr>
+    </tbody>
 </table>
-
 
 </body>
 </html>
