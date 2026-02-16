@@ -5,7 +5,7 @@
     --bg: #fff7cc;
     --text: #1f2937;
     --accent: #0ea5e9;
-    --accent2: #a855f7;
+    --accent2: #441273;
     --muted: #6b7280;
     --border: #111827;
 }
@@ -21,8 +21,10 @@ body{
     font-size: 18px;
     line-height: 1.65;
     color: var(--text);
-    background-color: var(--bg); /* вимога: фон body */
+    background-color: var(--bg); 
 }
+
+
 
 /* =========================
    Headings (HN)
@@ -35,6 +37,8 @@ body{
     letter-spacing: 0.5px;
     margin: 0 0 14px 0;
 }
+
+
 
 h2{
     font-size: 26px;
@@ -59,22 +63,18 @@ h2{
     border-radius: 10px;
     text-decoration: none;
     font-weight: 700;
-    color: #0f172a;
     background: rgba(255,255,255,0.6);
 }
 
-/* Стилі посилань (глобально) */
+
 a:link{ color: var(--accent); }
 a:visited{ color: var(--accent2); }
 a:hover{ text-decoration: underline; }
 a:active{ color: #ef4444; }
 
-/* =========================
-   Unique id (унікальний)
-   !important - примусово
-========================= */
+
 #special-offer{
-    color: #b91c1c !important;     /* вимога: !important */
+    color: #b91c1c !important;    
     font-weight: 800;
     background: rgba(255,255,255,0.65);
     padding: 10px 12px;
@@ -91,7 +91,7 @@ a:active{ color: #ef4444; }
 }
 
 .note{
-    background: rgba(14,165,233,0.12);
+    background: rgba(255, 255, 255, 0.12);
     border: 1px dashed rgba(14,165,233,0.5);
     padding: 10px 12px;
     border-radius: 10px;
@@ -193,9 +193,7 @@ dd{
     text-align: center;
 }
 
-/* =========================
-   Footer link block
-========================= */
+
 .link-block{
     text-align: center;
     margin-top: 10px;
