@@ -227,8 +227,9 @@ dd{
     text-align: center;
 }
 
-.table tbody tr:nth-child(even){
-    background: rgba(14,165,233,0.08);
+.table tbody tr:first-child td{
+    background: rgba(255, 193, 7, 0.8); 
+    font-weight: 700;
 }
 
 .table .right{
@@ -242,4 +243,107 @@ dd{
 .link-block{
     text-align: center;
     margin-top: 10px;
+}
+
+/* ===================
+   Destinations cards 
+====================== */
+
+.destinations{
+    width: 90%;
+    margin: 12px auto 18px auto;
+}
+
+
+.dest-card{
+    width: 46%;
+    margin: 10px 2%;
+
+
+    padding: 16px 16px 52px 16px;
+
+    border: 2px solid rgba(17,24,39,0.18);
+    border-radius: 14px;
+
+    position: relative;
+    box-sizing: border-box;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #fff;
+    overflow: hidden;
+}
+
+
+.float-left{ float: left; }
+.float-right{ float: right; }
+
+
+.clearfix{ clear: both; }
+
+
+.dest-card .badge{
+    z-index: 5;
+}
+
+
+.dest-title{
+    margin: 0 0 8px 0;
+    color: #fff;
+}
+
+
+.dest-text{
+    margin: 0 0 10px 0;
+    color: rgba(255,255,255,0.95);
+}
+
+
+.label{
+    font-weight: 800;
+    color: rgba(255,255,255,0.95);
+}
+
+
+.turkey{ background-image: url("images/turkey.png"); }
+.italy{  background-image: url("images/italy.png"); }
+.spain{  background-image: url("images/spain.png"); }
+.egypt{  background-image: url("images/egypt.png"); }
+
+
+.dest-card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    border-radius: 14px;
+    z-index: 1;
+}
+
+
+.dest-card > *{
+    position: relative;
+    z-index: 2;
+}
+
+
+.dest-card::after{
+    content: "Переглянути →";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    padding: 10px 0;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+
+    background: rgba(0, 0, 0, 0.4);
+    letter-spacing: 0.5px;
+
+    z-index: 3;
 }

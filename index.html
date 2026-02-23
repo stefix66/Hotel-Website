@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="Бондаренко Ілля Миколайович">
     <title>Готелі світу — Головна</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -33,12 +34,42 @@
 </p>
 
 <h2>Популярні напрямки</h2>
-<ul>
-    <li>Туреччина</li>
-    <li>Італія</li>
-    <li>Іспанія</li>
-    <li>Єгипет</li>
-</ul>
+
+<div class="destinations">
+    <div class="dest-card float-left turkey">
+        <span class="badge rounded-pill text-bg-warning position-absolute top-0 end-0 m-2">TOP</span>
+        <h3 class="dest-title">Туреччина</h3>
+        <p class="dest-text">
+            <span class="label">Формат:</span> All Inclusive, море, 5★
+        </p>
+    </div>
+
+    <div class="dest-card float-left italy">
+        <span class="badge rounded-pill text-bg-success position-absolute top-0 end-0 m-2">-10%</span>
+        <h3 class="dest-title">Італія</h3>
+        <p class="dest-text">
+            <span class="label">Формат:</span> міські готелі, екскурсії
+        </p>
+    </div>
+
+    <div class="dest-card float-right spain">
+        <span class="badge rounded-pill text-bg-primary position-absolute top-0 end-0 m-2">NEW</span>
+        <h3 class="dest-title">Іспанія</h3>
+        <p class="dest-text">
+            <span class="label">Формат:</span> пляжі, прогулянки, 4★
+        </p>
+    </div>
+
+    <div class="dest-card float-right egypt">
+        <span class="badge rounded-pill text-bg-danger position-absolute top-0 end-0 m-2">HOT</span>
+        <h3 class="dest-title">Єгипет</h3>
+        <p class="dest-text">
+            <span class="label">Формат:</span> теплий сезон, дайвінг
+        </p>
+    </div>
+
+    <div class="clearfix"></div>
+</div>
 
 <p class="link-block">
     <a href="hotels.html#hotels-table">Перейти до таблиці готелів</a>
@@ -48,13 +79,9 @@
     <a href="https://www.booking.com" target="_blank">Переглянути на Booking</a>
 </p>
 
-<h2>Фото місця відпочинку</h2>
 
-<a href="images/egypt.png" target="_blank">
-    <img class="media" src="images/egypt.png" width="700" height="350" alt="Єгипет">
-</a>
 
-<h2>Складна таблиця напрямків та цін</h2>
+<h2>Напрямки та ціни</h2>
 
 <table class="table">
     <caption>Туристичні напрямки та середня вартість проживання</caption>
@@ -73,7 +100,7 @@
 
     <tbody>
         <tr>
-            <td rowspan="2">Туреччина</td>
+            <td> Туреччина</td>
             <td>5★ Resort</td>
             <td class="right">150$</td>
             <td class="center">9.1</td>
