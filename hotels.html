@@ -6,15 +6,12 @@
 
     <link rel="stylesheet" href="styles.css">
 
-    
-    <style>
-        .nav a { background: rgb(241, 153, 153); border-color: rgba(255,255,255,0.25); }
-    </style>
+ 
 </head>
 
 <body style="background-color:#9ab9f7; color:#000000;">
 
-<h1 class="page-title">Популярні готелі</h1>
+<h1 class="page-title" id="main-title">Популярні готелі</h1>
 
 <p class="nav">
     <a href="index.html">Головна</a> |
@@ -23,11 +20,20 @@
     <a href="contacts.html">Контакти</a>
 </p>
 
-<p class="note"><b>Luxury Resort</b> — готель преміум класу біля моря.</p>
-<p class="note"><i>City Hotel</i> — зручний варіант для бізнес-подорожей.</p>
+<div class="control-panel">
+    <button onclick="redirectToContacts()">Перейти на сторінку контактів</button>
+    <button onclick="findElementsDemo()">Пошук елементів</button>
+    <button onclick="changeNodeProperties()">Властивості DOM-вузла</button>
+    <button onclick="insertNodesDemo()">Вставка вузлів</button>
+    <button onclick="replaceAndRemoveDemo()">Заміна і видалення</button>
+    <button onclick="writeDemo()">document.write()</button>
+</div>
+
+<p class="note hotel-note"><b>Luxury Resort</b> — готель преміум класу біля моря.</p>
+<p class="note hotel-note"><i>City Hotel</i> — зручний варіант для бізнес-подорожей.</p>
 
 <h2>Послуги</h2>
-<ol>
+<ol id="services-list">
     <li>SPA</li>
     <li>Басейн</li>
     <li>Трансфер</li>
@@ -56,7 +62,7 @@
             <td><img class="media" src="images/city-hotel.png" width="100" height="70" alt="Hotel 3"></td>
         </tr>
 
-        <tr class="center">
+        <tr class="center hotel-links">
             <td><a href="https://www.booking.com" target="_blank">Переглянути</a></td>
             <td><a href="https://www.booking.com" target="_blank">Переглянути</a></td>
             <td><a href="https://www.booking.com" target="_blank">Переглянути</a></td>
@@ -71,7 +77,7 @@
 </table>
 
 <h2>Відеоогляд курортного готелю</h2>
-<p class="lead" style="color: rgba(255,255,255,0.8);">
+<p class="lead" id="video-text" style="color: rgba(255,255,255,0.8);">
     Нижче представлено відеоогляд сучасного курортного готелю:
 </p>
 
@@ -83,6 +89,12 @@
     frameborder="0"
     allowfullscreen>
 </iframe>
+
+<div class="dom-box" id="dom-box">
+    Початковий текст у блоці для DOM-операцій.
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>

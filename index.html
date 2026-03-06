@@ -19,7 +19,6 @@
     <a href="contacts.html">Контакти</a>
 </p>
 
-
 <p style="text-align: center; font-style: italic;">
     <i>Інформаційний сайт про готелі</i> допоможе вам знайти ідеальне місце для відпочинку.
 </p>
@@ -28,10 +27,17 @@
     Ми розглядаємо <b>курортні</b>, <b>міські</b> та <b>бізнес-готелі</b>.
 </p>
 
-
 <p id="special-offer">
     Гаряча пропозиція: обирай напрямок — і гайда відпочивати!
 </p>
+
+<!-- Кнопки для виклику функцій -->
+<div style="text-align: center; margin: 20px 0;">
+    <button onclick="dialogWithUser()">Діалог з користувачем</button>
+    <button onclick="showDeveloperInfo('Бондаренко', 'Ілля')">Інфо про розробника</button>
+    <button onclick="compareDestinations()">Порівняти напрямки</button>
+    <button onclick="changeBackground30Sec()">Змінити фон на 30 сек</button>
+</div>
 
 <h2>Популярні напрямки</h2>
 
@@ -79,8 +85,6 @@
     <a href="https://www.booking.com" target="_blank">Переглянути на Booking</a>
 </p>
 
-
-
 <h2>Напрямки та ціни</h2>
 
 <table class="table">
@@ -100,12 +104,13 @@
 
     <tbody>
         <tr>
-            <td> Туреччина</td>
+            <td>Туреччина</td>
             <td>5★ Resort</td>
             <td class="right">150$</td>
             <td class="center">9.1</td>
         </tr>
         <tr>
+            <td>Італія</td>
             <td>4★ Hotel</td>
             <td class="right">90$</td>
             <td class="center">8.5</td>
@@ -117,6 +122,27 @@
         </tr>
     </tbody>
 </table>
+
+
+<script>
+    alert("Вітаємо на сайті «Готелі світу»!");
+
+    let userCity = prompt("З якого ви міста?");
+    let wantsDiscount = confirm("Бажаєте переглянути гарячі пропозиції?");
+
+    if (userCity) {
+        if (wantsDiscount) {
+            alert("Чудово! Для гостей з міста " + userCity + " ми покажемо акційні напрямки.");
+        } else {
+            alert("Добре, " + userCity + "! Ви можете просто переглянути доступні готелі.");
+        }
+    } else {
+        alert("Ви не вказали місто.");
+    }
+</script>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>

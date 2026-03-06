@@ -347,3 +347,21 @@ dd{
 
     z-index: 3;
 }
+
+
+        .control-panel{
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .control-panel button{
+            margin: 5px;
+            padding: 8px 12px;
+        }
+
+        .dom-box{
+            border: 2px dashed #333;
+            padding: 12px;
+            margin: 20px 0;
+            background: rgba(255,255,255,0.35);
+        }
