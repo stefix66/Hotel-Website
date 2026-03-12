@@ -26,7 +26,8 @@
 <p class="note"><b>Телефон:</b> +380 (00) 000-00-00</p>
 
 <h2>Графік роботи</h2>
-<ul style="list-style-type: square;">
+
+<ul id="work-schedule" style="list-style-type: square;">
     <li>Пн–Пт: 09:00–18:00</li>
     <li>Сб: 10:00–15:00</li>
     <li>Нд: вихідний</li>
@@ -37,6 +38,29 @@
 
 <h2>Посилання на адресу офісу</h2>
 <p><a href="https://www.google.com/maps" target="_blank">Переглянути на карті</a></p>
+
+
+
+<script>
+
+const scheduleList = document.getElementById("work-schedule");
+
+scheduleList.onclick = function(event) {
+
+    const clickedElement = event.target;
+
+    if (clickedElement.tagName === "LI") {
+
+        clickedElement.classList.toggle("highlight-item");
+
+    }
+
+};
+
+
+
+
+</script>
 
 </body>
 </html>

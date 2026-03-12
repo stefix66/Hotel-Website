@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація | Hotel Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body style="background-color:#eef5ff; color:#000000;">
+
+    <h1 class="page-title">Реєстрація на сайті готелів</h1>
+
+    <p class="nav">
+        <a href="index.html">Головна</a> |
+        <a href="hotels.html">Готелі</a> |
+        <a href="rooms.html">Номери</a> |
+        <a href="contacts.html">Контакти</a> |
+        <a href="register.html">Реєстрація</a>
+    </p>
+
+    <section class="register-section">
+        <h2>Створення облікового запису</h2>
+        <p class="register-text">
+            Заповніть форму, щоб зареєструватися на сайті та отримати доступ до бронювання номерів.
+        </p>
+
+        <div id="register-panel">
+            <div id="register-menu" class="register-menu">
+                <button type="button" data-action="showForm">Відкрити форму</button>
+                <button type="button" data-action="clearForm">Очистити поля</button>
+                <button type="button" data-action="showRules">Показати правила</button>
+                <button type="button" data-action="registerUser">Зареєструватися</button>
+            </div>
+
+            <div id="rules-box" class="rules-box hidden">
+                Для реєстрації потрібно ввести ім’я, email та пароль. Усі поля мають бути заповнені.
+            </div>
+
+            <div id="register-form-box" class="register-form hidden">
+                <label>
+                    Ім’я користувача:
+                    <br>
+                    <input type="text" id="user-name">
+                </label>
+
+                <br><br>
+
+                <label>
+                    Email:
+                    <br>
+                    <input type="email" id="user-email">
+                </label>
+
+                <br><br>
+
+                <label>
+                    Пароль:
+                    <br>
+                    <input type="password" id="user-password">
+                </label>
+
+                <p id="register-message"></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const registerPanel = document.getElementById("register-panel");
+        const formBox = document.getElementById("register-form-box");
+        const rulesBox = document.getElementById("rules-box");
+        const messageBox = document.getElementById("register-message");
+
+        const nameInput = document.getElementById("user-name");
+        const emailInput = document.getElementById("user-email");
+        const passwordInput = document.getElementById("user-password");
+
+        const registerActions = {
+            showForm() {
+                formBox.classList.remove("hidden");
+                rulesBox.classList.add("hidden");
+                messageBox.textContent = "";
+            },
+
+            clearForm() {
+                nameInput.value = "";
+                emailInput.value = "";
+                passwordInput.value = "";
+                messageBox.textContent = "Поля форми очищено.";
+                messageBox.style.color = "#1d4ed8";
+            },
+
+            showRules() {
+                rulesBox.classList.remove("hidden");
+                formBox.classList.remove("hidden");
+                messageBox.textContent = "";
+            },
+
+            registerUser() {
+                const name = nameInput.value.trim();
+                const email = emailInput.value.trim();
+                const password = passwordInput.value.trim();
+
+                formBox.classList.remove("hidden");
+
+                if (name === "" || email === "" || password === "") {
+                    messageBox.textContent = "Будь ласка, заповніть усі поля форми.";
+                    messageBox.style.color = "red";
+                    return;
+                }
+
+                messageBox.textContent = "Реєстрацію успішно виконано. Ласкаво просимо до системи бронювання!";
+                messageBox.style.color = "green";
+            }
+        };
+
+        registerPanel.addEventListener("click", function(event) {
+            const action = event.target.dataset.action;
+
+            if (!action) return;
+
+            if (registerActions[action]) {
+                registerActions[action]();
+            }
+        });
+    </script>
+
+</body>
+</html>

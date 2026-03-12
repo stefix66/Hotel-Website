@@ -94,6 +94,57 @@
     Початковий текст у блоці для DOM-операцій.
 </div>
 
+<section class="event-demo">
+    <div class="event-demo-header">
+        <h2>Інтерактивний огляд готелів</h2>
+        <p>
+            Ознайомтеся з популярними варіантами проживання, перегляньте особливості
+            готелів та протестуйте інтерактивні елементи сторінки.
+        </p>
+    </div>
+
+    <div class="hotel-cards">
+        <div class="hotel-card" id="hotel-card-1" onclick="cardClickAttributeHandler(event)">
+            <h3>Luxury Resort</h3>
+            <p class="hotel-type">Курортний готель 5★</p>
+            <p>
+                Натисніть на картку, щоб позначити цей варіант як обраний для відпочинку.
+            </p>
+        </div>
+
+        <div class="hotel-card" id="hotel-card-2">
+            <h3>City Hotel</h3>
+            <p class="hotel-type">Міський готель 3★</p>
+            <p>
+                Наведіть курсор, щоб переглянути акцент на картці та візуально виділити пропозицію.
+            </p>
+        </div>
+
+        <div class="hotel-card" id="hotel-card-3">
+            <h3>Business Stay</h3>
+            <p class="hotel-type">Бізнес-готель 4★</p>
+            <p>
+                Кнопки нижче дозволяють взаємодіяти з елементами сторінки та тестувати події.
+            </p>
+        </div>
+    </div>
+
+    <div class="booking-actions">
+        <button id="multi-handler-btn">Перевірити бронювання</button>
+        <button id="object-handler-btn">Який готель обрати?</button>
+        <button id="remove-object-handler-btn">Вимкнути інформаційне поле</button>
+    </div>
+
+    <div class="current-target-box" id="current-target-box">
+        Інформаційна панель гостя: після активації натисніть на цей блок,
+        щоб переглянути реакцію сторінки на взаємодію.
+    </div>
+
+    <div class="event-log" id="event-log">
+        Тут відображатимуться повідомлення про дії користувача на сторінці.
+    </div>
+</section>
+
 <script src="script.js"></script>
 
 </body>

@@ -159,3 +159,130 @@ function writeDemo() {
     document.write("<h2 style='text-align:center;'>Сторінку перезаписано через document.write()</h2>");
     document.write("<p style='text-align:center;'>Цей текст додано методом document.write().</p>");
 }
+
+
+
+
+// ===============================
+// ЛАБОРАТОРНА: Події JavaScript
+// ===============================
+
+// Функція для виводу повідомлень у інформаційний блок
+function logMessage(message) {
+    const log = document.getElementById("event-log");
+    log.innerHTML = message;
+}
+
+// --------------------------------------------------
+// 1. Обробник через HTML-атрибут onclick
+// --------------------------------------------------
+
+function cardClickAttributeHandler(event) {
+
+    const card = event.currentTarget;
+
+    card.classList.toggle("active-card");
+
+    console.log("Ви обрали готель «Luxury Resort» для детальнішого перегляду.");
+}
+
+
+
+// --------------------------------------------------
+// 2. Обробник через властивість DOM-елемента
+// --------------------------------------------------
+
+const hotelCard2 = document.getElementById("hotel-card-2");
+
+hotelCard2.onmouseover = function () {
+
+    hotelCard2.style.backgroundColor = "#eef6ff";
+    hotelCard2.style.transform = "scale(1.03)";
+
+    logMessage("Картку готелю «City Hotel» виділено для попереднього перегляду.");
+
+};
+
+hotelCard2.onmouseout = function () {
+
+    hotelCard2.style.backgroundColor = "#ffffff";
+    hotelCard2.style.transform = "scale(1)";
+
+};
+
+
+
+// --------------------------------------------------
+// 3. addEventListener з кількома обробниками
+// --------------------------------------------------
+
+const multiHandlerBtn = document.getElementById("multi-handler-btn");
+
+function firstClickHandler() {
+
+    console.log("Система перевіряє доступність номерів у вибраному готелі.");
+
+}
+
+function secondClickHandler() {
+
+    alert("Перевірка бронювання виконана. Номери доступні!");
+
+}
+
+multiHandlerBtn.addEventListener("click", firstClickHandler);
+multiHandlerBtn.addEventListener("click", secondClickHandler);
+
+
+
+// --------------------------------------------------
+// 4. Об'єкт-обробник події (handleEvent)
+// --------------------------------------------------
+
+const currentTargetBox = document.getElementById("current-target-box");
+
+const connectObjectHandlerBtn = document.getElementById("object-handler-btn");
+const removeObjectHandlerBtn = document.getElementById("remove-object-handler-btn");
+
+const hotelObjectHandler = {
+
+    handleEvent(event) {
+
+        event.currentTarget.classList.toggle("highlight-box");
+
+       logMessage(
+    "Інтерактивна панель гостя активована для елемента з id: " 
+    + event.currentTarget.id
+);
+
+    }
+
+};
+
+
+
+// Підключення об'єкта-обробника
+
+connectObjectHandlerBtn.addEventListener("click", function () {
+
+    currentTargetBox.addEventListener("click", hotelObjectHandler);
+
+    logMessage("Обирайте Business Stay для ділових поїздок, Luxury Resort для розкішного відпочинку, City Hotel для міського туризму");
+
+});
+
+
+
+// --------------------------------------------------
+// 5. Видалення обробника події
+// --------------------------------------------------
+
+removeObjectHandlerBtn.addEventListener("click", function () {
+
+    currentTargetBox.removeEventListener("click", hotelObjectHandler);
+
+    logMessage("Інформаційне поле деактивовано. Клікніть «Який готель обрати?» для повторного перегляду.");
+
+});
+
+
