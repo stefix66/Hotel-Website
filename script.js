@@ -286,3 +286,5 @@ removeObjectHandlerBtn.addEventListener("click", function () {
 });
 
 
+
+

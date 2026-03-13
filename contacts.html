@@ -3,11 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Контакти</title>
-
     <link rel="stylesheet" href="styles.css">
 
     <style>
         a:link { color: #ff03c4; }
+
+        .highlight-item {
+            background-color: #d4f7d3;
+        }
+
+        #image-area {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            border: 2px dashed #b7cbb0;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        #draggable-office {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: grab;
+            user-select: none;
+            transition: left 0.2s, top 0.2s;
+        }
     </style>
 </head>
 
@@ -34,32 +55,91 @@
 </ul>
 
 <h2>Фото офісу</h2>
-<img class="media" src="images/office.png" width="700" height="450" alt="Офіс">
+
+<div id="image-area">
+    <img id="draggable-office" class="media" src="images/office.png" width="700" height="450" alt="Офіс" draggable="false">
+</div>
 
 <h2>Посилання на адресу офісу</h2>
 <p><a href="https://www.google.com/maps" target="_blank">Переглянути на карті</a></p>
 
-
-
 <script>
-
 const scheduleList = document.getElementById("work-schedule");
 
 scheduleList.onclick = function(event) {
-
     const clickedElement = event.target;
 
     if (clickedElement.tagName === "LI") {
-
         clickedElement.classList.toggle("highlight-item");
-
     }
-
 };
 
+scheduleList.addEventListener("mouseover", function(event){
+    if(event.target.tagName === "LI"){
+        event.target.style.backgroundColor = "#d4f7d3";
 
+        console.log(
+            "Курсор наведено на: " + event.target.textContent +
+            ". Попередній елемент: " +
+            (event.relatedTarget ? event.relatedTarget.tagName : "немає")
+        );
+    }
+});
 
+scheduleList.addEventListener("mouseout", function(event){
+    if(event.target.tagName === "LI"){
+        event.target.style.backgroundColor = "";
 
+        console.log(
+            "Курсор залишив: " + event.target.textContent +
+            ". Перехід до елемента: " +
+            (event.relatedTarget ? event.relatedTarget.tagName : "немає")
+        );
+    }
+});
+
+const draggableOffice = document.getElementById("draggable-office");
+
+let isDragging = false;
+let shiftX = 0;
+let shiftY = 0;
+
+draggableOffice.addEventListener("mousedown", function(event) {
+    isDragging = true;
+
+    shiftX = event.clientX - draggableOffice.offsetLeft;
+    shiftY = event.clientY - draggableOffice.offsetTop;
+
+    draggableOffice.style.cursor = "grabbing";
+
+    event.preventDefault();
+});
+
+document.addEventListener("mousemove", function(event) {
+    if (!isDragging) return;
+
+    const imageArea = document.getElementById("image-area");
+    const areaRect = imageArea.getBoundingClientRect();
+
+    let newLeft = event.clientX - areaRect.left - shiftX;
+    let newTop = event.clientY - areaRect.top - shiftY;
+
+    const maxLeft = imageArea.clientWidth - draggableOffice.offsetWidth;
+    const maxTop = imageArea.clientHeight - draggableOffice.offsetHeight;
+
+    if (newLeft < 0) newLeft = 0;
+    if (newTop < 0) newTop = 0;
+    if (newLeft > maxLeft) newLeft = maxLeft;
+    if (newTop > maxTop) newTop = maxTop;
+
+    draggableOffice.style.left = newLeft + "px";
+    draggableOffice.style.top = newTop + "px";
+});
+
+document.addEventListener("mouseup", function() {
+    isDragging = false;
+    draggableOffice.style.cursor = "grab";
+});
 </script>
 
 </body>
